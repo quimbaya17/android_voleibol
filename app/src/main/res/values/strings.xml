@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Clase1</string>
+    <string name="hola_Mundo">Hola mundo</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_contrase_a">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="recuerdar_mi_sesion">Recuerdar mi sesion</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="ver_ultimos_10_juegos">Ver ultimos 10 juegos</string>
+    <string name="nuevo_juego">Nuevo juego</string>
+    <string name="set_n_mero_1">Set número 1</string>
+    <string name="puntos">Puntos</string>
+    <string name="_1">+1</string>
+    <string name="reiniciar_juego">Reiniciar juego</string>
+    <string name="listado_de_los_ultimos_10_juegos">Listado de los ultimos 10 juegos</string>
+    <string name="nombre_del_usuario">Nombre del usuario</string>
+    <string name="imagemenu">imageMenu</string>
+</resources>
