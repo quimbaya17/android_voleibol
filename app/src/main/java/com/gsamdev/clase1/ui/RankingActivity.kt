@@ -1,15 +1,12 @@
-package com.gsamdev.clase1
+package com.gsamdev.clase1.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.gson.Gson
+import com.gsamdev.clase1.R
 
-class JuegoActivity : AppCompatActivity() {
-
-
+class RankingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_juego)
-
+        setContentView(R.layout.activity_ranking)
     }
 }

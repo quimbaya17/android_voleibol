@@ -1,28 +1,34 @@
-package com.gsamdev.clase1
+package com.gsamdev.clase1.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.gsamdev.clase1.data.SharedPreferencesManager
 import com.gsamdev.clase1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var sharedPref: SharedPreferencesManager
+
     private var usuario = ""
     private var contrasenia = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
+        sharedPref = SharedPreferencesManager(this)
         setContentView(binding.root)
 
-        initUI()
+        val usernamePref = sharedPref.getUserName()
+        Toast.makeText(this, usernamePref, Toast.LENGTH_SHORT).show()
 
+        initUI()
     }
+
     //Inicializamos el diseño
     private fun initUI() {
         setupListeners()
@@ -31,11 +37,13 @@ class MainActivity : AppCompatActivity() {
     private fun setupListeners() {
         binding.btnIngresar.setOnClickListener {
             usuario = binding.txtUsuario.text.toString()
-            //Intencion de pasar de una actividad a otra
 
             if (validateForm()) {
                 val intent = Intent(this, MenuActivity::class.java)
                 intent.putExtra("nombreUsuario", usuario)
+
+                sharedPref.saveUserName(usuario)
+
                 startActivity(intent)
             }
         }

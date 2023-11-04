@@ -1,4 +1,4 @@
-package com.gsamdev.clase1
+package com.gsamdev.clase1.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
