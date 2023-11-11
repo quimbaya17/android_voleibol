@@ -9,18 +9,28 @@ class SharedPreferencesManager(context: Context) {
         context.getSharedPreferences("DB_CLASE1", Context.MODE_PRIVATE)
     }
 
-    fun saveUserName(username: String) {
+    fun savePref(key: String, value: Any) {
         val editor = sharedPreferences.edit()
-        editor.putString("keyUserName", username)
+        when (value) {
+            is String -> editor.putString(key, value)
+            is Int -> editor.putInt(key, value)
+            is Long -> editor.putLong(key, value)
+            is Boolean -> editor.putBoolean(key, value)
+            is Float -> editor.putFloat(key, value)
+            else -> throw IllegalArgumentException("Este tipo de datos no puede ser guardado")
+        }
         editor.apply()
     }
 
-    //Create function for save a Boolean
-
-    //Create a function for get as Boolean
-
-    fun getUserName(): String =
-        sharedPreferences.getString("keyUserName", "Empty").toString()
-
+    fun getPref(key: String, defaultValue: Any): Any {
+       return when(defaultValue){
+            is String -> sharedPreferences.getString(key, defaultValue)
+            is Int -> sharedPreferences.getInt(key, defaultValue)
+            is Long-> sharedPreferences.getLong(key, defaultValue)
+            is Boolean -> sharedPreferences.getBoolean(key, defaultValue)
+            is Float -> sharedPreferences.getFloat(key, defaultValue)
+            else -> throw  IllegalArgumentException("No es posible obtener este tipo de dato")
+        }!!
+    }
 
 }

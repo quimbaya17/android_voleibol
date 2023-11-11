@@ -23,9 +23,6 @@ class MainActivity : AppCompatActivity() {
         sharedPref = SharedPreferencesManager(this)
         setContentView(binding.root)
 
-        val usernamePref = sharedPref.getUserName()
-        Toast.makeText(this, usernamePref, Toast.LENGTH_SHORT).show()
-
         initUI()
     }
 
@@ -37,12 +34,15 @@ class MainActivity : AppCompatActivity() {
     private fun setupListeners() {
         binding.btnIngresar.setOnClickListener {
             usuario = binding.txtUsuario.text.toString()
+            contrasenia = binding.txtContrasenia.text.toString()
 
             if (validateForm()) {
                 val intent = Intent(this, MenuActivity::class.java)
                 intent.putExtra("nombreUsuario", usuario)
 
-                sharedPref.saveUserName(usuario)
+                sharedPref.savePref("userNameKey", usuario)
+                sharedPref.savePref("userPasswordKey", contrasenia)
+                sharedPref.savePref("userIsLoggedKey", true)
 
                 startActivity(intent)
             }
