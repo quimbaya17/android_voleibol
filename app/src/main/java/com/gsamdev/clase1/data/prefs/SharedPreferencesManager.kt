@@ -1,4 +1,4 @@
-package com.gsamdev.clase1.data
+package com.gsamdev.clase1.data.prefs
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -23,14 +23,19 @@ class SharedPreferencesManager(context: Context) {
     }
 
     fun getPref(key: String, defaultValue: Any): Any {
-       return when(defaultValue){
+        return when (defaultValue) {
             is String -> sharedPreferences.getString(key, defaultValue)
             is Int -> sharedPreferences.getInt(key, defaultValue)
-            is Long-> sharedPreferences.getLong(key, defaultValue)
+            is Long -> sharedPreferences.getLong(key, defaultValue)
             is Boolean -> sharedPreferences.getBoolean(key, defaultValue)
             is Float -> sharedPreferences.getFloat(key, defaultValue)
-            else -> throw  IllegalArgumentException("No es posible obtener este tipo de dato")
+            else -> throw IllegalArgumentException("No es posible obtener este tipo de dato")
         }!!
     }
 
+    fun removePref(key: String) {
+        val editor = sharedPreferences.edit()
+        editor.remove(key)
+        editor.apply()
+    }
 }

@@ -30,7 +30,7 @@
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/txtNuevoJuego"
+        android:id="@+id/btnNewGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_32dp"
@@ -41,7 +41,7 @@
         android:textColor="@color/white" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnUltimosJuegos"
+        android:id="@+id/btnHistoryGames"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_32dp"

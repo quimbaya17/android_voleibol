@@ -2,12 +2,12 @@ package com.gsamdev.clase1
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
-import com.gsamdev.clase1.data.SharedPreferencesManager
+import androidx.appcompat.app.AppCompatActivity
+import com.gsamdev.clase1.data.prefs.SharedPreferencesManager
 import com.gsamdev.clase1.databinding.ActivitySplashScreenBinding
 import com.gsamdev.clase1.ui.MainActivity
 import com.gsamdev.clase1.ui.MenuActivity

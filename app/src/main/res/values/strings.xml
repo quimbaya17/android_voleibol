@@ -16,4 +16,7 @@
     <string name="nombre_del_usuario">Nombre del usuario</string>
     <string name="imagemenu">imageMenu</string>
     <string name="bievenido">Bievenido</string>
+    <string name="name_team_a">Nombre del equipo A</string>
+    <string name="team_planning">Planeación del juego</string>
+    <string name="name_game">Nombre del juego</string>
 </resources>
