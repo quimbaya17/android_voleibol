@@ -33,4 +33,5 @@ class DbManager(context: Context) {
         }
         return db!!
     }
+
 }
