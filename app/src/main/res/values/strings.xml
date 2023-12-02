@@ -19,4 +19,5 @@
     <string name="name_team_a">Nombre del equipo A</string>
     <string name="team_planning">Planeación del juego</string>
     <string name="name_game">Nombre del juego</string>
+    <string name="register_txt">Registrarme</string>
 </resources>

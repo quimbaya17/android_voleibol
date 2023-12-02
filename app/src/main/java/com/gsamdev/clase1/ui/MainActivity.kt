@@ -46,15 +46,15 @@ class MainActivity : AppCompatActivity() {
 
             if (validateForm()) {
                 val user = UserModel(
-                    name = "Guillermo",
+                    name = "Andres Felipe",
                     identification = "121",
-                    phone = "1222",
+                    phone = "32172517353",
                     email = "gsamdev@gmail.com",
                     userName = "gsamdev",
                     role = "adminnn",
                     password = "123"
                 )
-
+                //queryUser.insertUser(user)
                 loginAuth()
             }
 
@@ -62,13 +62,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loginAuth() {
-        val response = queryAuth.login(usuario, contrasenia)
-        if (response != null) {
+        /*val response = queryAuth.login(usuario, contrasenia)
+        if (response != null) {*/
             sharedPref.savePref("userIsLoggedKey", true)
-            val intent = Intent(this, MenuActivity::class.java)
+            val intent = Intent(this, ListUsersActivity::class.java)
             startActivity(intent)
             finish()
-        }
+        //}
     }
 
     private fun validateForm(): Boolean {

@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.gsamdev.clase1.data.prefs.SharedPreferencesManager
 import com.gsamdev.clase1.databinding.ActivitySplashScreenBinding
+import com.gsamdev.clase1.ui.ListUsersActivity
 import com.gsamdev.clase1.ui.MainActivity
 import com.gsamdev.clase1.ui.MenuActivity
 
@@ -42,7 +43,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Looper.myLooper()?.let {
             Handler(it).postDelayed({
                 if (userIsLogged) {
-                    val intent = Intent(this, MenuActivity::class.java)
+                    val intent = Intent(this, ListUsersActivity::class.java)
                     startActivity(intent)
                 } else {
                     val intent = Intent(this, MainActivity::class.java)
